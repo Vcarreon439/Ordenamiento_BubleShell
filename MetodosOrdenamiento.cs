@@ -54,31 +54,38 @@ namespace Ordenamiento_BubleShell
 
         public static void BurbujaSteps<T>(this T[] arreglo) where T : IComparable<T>
         {
-            int iteracion = 1;
-            int cambios = 1;
+            int iteracion = 0;
+            int cambios = 0;
 
-            for (int i = 0; i < arreglo.Length; i++)
+            for (int i = 0; i < arreglo.Length; i++) 
             {
                 Console.WriteLine($"Iteracion #{iteracion}, cambios {cambios}");
                 Console.WriteLine("_______________________________________________________");
-                for (int j = arreglo.Length - 1; j > i; j­­--)
+
+                for (int j = arreglo.Length-1; j > i; j--) 
                 {
+
                     bool comp = false;
 
                     if (arreglo[j - 1].CompareTo(arreglo[j]) > 0)
                     {
                         comp = true;
+                        arreglo.Cambio(j, j-1);
                         cambios++;
-                        arreglo.Cambio(j - 1, j);
-                        Console.WriteLine($"Hay intercambio? {arreglo[j - 1]} > {arreglo[j]} | {comp}");
+                        Console.WriteLine($"Hay intercambio? {arreglo[j]} > {arreglo[j-1]} | {comp}");
                     }
-                    else
-                        Console.WriteLine($"Hay intercambio? {arreglo[j - 1]} > {arreglo[j]} | {comp}");
+                    else 
+                    {
+                        Console.WriteLine($"Hay intercambio? {arreglo[j-1]} > {arreglo[j]} | {comp}");
+                    }
+
                 }
-                arreglo.Imprimir();
-                iteracion++;
                 Console.WriteLine();
+                arreglo.ImprimirEnL();
+                Console.WriteLine();
+                iteracion++;
             }
+
         }
 
         /// <summary>
@@ -130,6 +137,8 @@ namespace Ordenamiento_BubleShell
         {
             // Distancia entre elementos que se van a comparar
             var d = arreglo.Length / 2;
+
+
 
             while (d >= 1)
             {
