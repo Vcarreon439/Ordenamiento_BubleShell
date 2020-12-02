@@ -12,7 +12,8 @@ namespace Ordenamiento_BubleShell
             foreach (var item in arreglo)
                 ElementosArreglo += $"{item}-";
 
-            
+            var fileName = $"Prueba_Shell_T{arreglo.Length}_E{ElementosArreglo}.txt";
+
             var file = new FileStream(fileName, FileMode.OpenOrCreate);
 
             var standardOutput = Console.Out;
@@ -42,7 +43,7 @@ namespace Ordenamiento_BubleShell
             foreach (var item in arreglo)
                 ElementosArreglo += $"{item}-";
 
-            var fileName = $"Prueba_Burbuja_T{arreglo.Length}_E{ElementosArreglo}.txt";//args[0];
+            var fileName = $"Prueba_Burbuja_T{arreglo.Length}_E{ElementosArreglo}.txt";
 
             var file = new FileStream(fileName, FileMode.OpenOrCreate);
 

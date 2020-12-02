@@ -14,7 +14,6 @@ namespace Ordenamiento_BubleShell
             Console.WriteLine("\n______________________________");
             Shell();
             Console.ReadKey();
-            Shell();
         }
 
         static public void RBurbuja() 
