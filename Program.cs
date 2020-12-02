@@ -12,6 +12,7 @@ namespace Ordenamiento_BubleShell
         {
             RBurbuja();
             Console.WriteLine("\n______________________________");
+            Shell();
             Console.ReadKey();
             Shell();
         }
@@ -37,12 +38,10 @@ namespace Ordenamiento_BubleShell
             int[] ArrShell = { 04, 08, 90, 23, 01, 67, 54, 16, 02, 85, 31, 114, 110, 26, 71, 38 };
             int[] copia = ArrShell;
 
-
             Console.WriteLine("Metodo Shell\n");
             Console.WriteLine("Arreglo original");
             ArrShell.ImprimirEnL();
             Console.WriteLine();
-            ArrShell.ShellSort();
             Console.WriteLine("\nArreglo Ordenado");
             ArrShell.ImprimirEnL();
 

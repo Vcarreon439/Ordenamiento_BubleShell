@@ -12,7 +12,6 @@ namespace Ordenamiento_BubleShell
             foreach (var item in arreglo)
                 ElementosArreglo += $"{item}-";
 
-            var fileName = $"Prueba_Shell_T{arreglo.Length}_E{ElementosArreglo}.txt";
             
             var file = new FileStream(fileName, FileMode.OpenOrCreate);
 
