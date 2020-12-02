@@ -12,8 +12,8 @@ namespace Ordenamiento_BubleShell
         {
             RBurbuja();
             Console.WriteLine("\n______________________________");
-            Shell();
             Console.ReadKey();
+            Shell();
         }
 
         static public void RBurbuja() 
@@ -42,7 +42,7 @@ namespace Ordenamiento_BubleShell
             Console.WriteLine("Arreglo original");
             ArrShell.ImprimirEnL();
             Console.WriteLine();
-            ArrShell.Burbuja();
+            ArrShell.ShellSort();
             Console.WriteLine("\nArreglo Ordenado");
             ArrShell.ImprimirEnL();
 
