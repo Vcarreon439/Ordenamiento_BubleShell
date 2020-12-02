@@ -72,11 +72,11 @@ namespace Ordenamiento_BubleShell
                         comp = true;
                         arreglo.Cambio(j, j-1);
                         cambios++;
-                        Console.WriteLine($"Hay intercambio? {arreglo[j]} > {arreglo[j-1]} | {comp}");
+                        Console.WriteLine($"Hay intercambio? [{(j-1)+1}]{arreglo[j]} > [{j+1}]{arreglo[j-1]} | {comp}");
                     }
                     else 
                     {
-                        Console.WriteLine($"Hay intercambio? {arreglo[j-1]} > {arreglo[j]} | {comp}");
+                        Console.WriteLine($"Hay intercambio? [{(j-1)+1}]{arreglo[j-1]} > [{j+1}]{arreglo[j]} | {comp}");
                     }
 
                 }
