@@ -119,10 +119,11 @@ namespace Ordenamiento_BubleShell
             
             while (d >= 1)
             {
+
                 for (var i = d; i < arreglo.Length; i++)
                 {
                     var j = i;
-                    while ((j >= d) && (arreglo.EsMayorQue(j, j - d)))
+                    while ((j >= d) && (arreglo.EsMayorQue(j-d, j)))
                     {
                         arreglo.Cambio(j, (j - d));
                         j = j - d;
@@ -138,16 +139,35 @@ namespace Ordenamiento_BubleShell
             // Distancia entre elementos que se van a comparar
             var d = arreglo.Length / 2;
 
-
-
             while (d >= 1)
             {
                 bool happen = false;
+                int cont = 0;
+                T[] nuevo = arreglo;
+                Console.WriteLine();
+
+                for (int i = 0; i < nuevo.Length; i++)
+                {
+                    Console.Write($"{nuevo[i]}\t");
+                }
+
+                    Console.WriteLine();
+
+                for (int i = 0; i < nuevo.Length; i++)
+                {
+                    if (cont==(nuevo.Length/2))
+                        cont = 0;
+
+                    Console.Write($"{cont}\t");
+                    cont++;
+                }
+
+
 
                 for (var i = d; i < arreglo.Length; i++)
                 {
                     var j = i;
-                    while ((j >= d) && (arreglo.EsMayorQue(j, j - d)))
+                    while ((j >= d) && (arreglo.EsMayorQue(j-d, j)))
                     {
                         happen = true;
                         arreglo.Cambio(j, (j - d));
@@ -157,9 +177,8 @@ namespace Ordenamiento_BubleShell
 
                 if (happen)
                 {
-                    Console.Write("La ordenacion produce: ");
+                    Console.Write("\n\nLa ordenacion produce: ");
                     arreglo.Imprimir();
-                    Console.WriteLine();
                 }
                 d = d / 2;
             }
@@ -229,6 +248,7 @@ namespace Ordenamiento_BubleShell
                 }
             } while (i <= j);
 
+            //Recursividad
             if (primero < j)
                 vector.QuickSort(primero, j);
 
@@ -249,8 +269,8 @@ namespace Ordenamiento_BubleShell
         private static bool EsMayorQue<T>(this T[] arreglo, int valor1, int valor2) where T : IComparable<T>
         {
             bool result = false;
-
-            if (Convert.ToInt32(arreglo[valor1]) < Convert.ToInt32(arreglo[valor2]))
+            //Comprobacion
+            if (Convert.ToInt32(arreglo[valor1]) > Convert.ToInt32(arreglo[valor2]))
                 result = true;
 
             return result;
@@ -267,8 +287,8 @@ namespace Ordenamiento_BubleShell
         private static bool EsMenorQue<T>(this T[] arreglo, int valor1, int valor2) where T : IComparable<T>
         {
             bool result = false;
-
-            if (Convert.ToInt32(arreglo[valor1]) > Convert.ToInt32(arreglo[valor2]))
+            //Comprobacion
+            if (Convert.ToInt32(arreglo[valor1]) < Convert.ToInt32(arreglo[valor2]))
                 result = true;
 
             return result;
@@ -283,7 +303,7 @@ namespace Ordenamiento_BubleShell
         public static void Imprimir<T>(this T[] arreglo) where T : IComparable<T>
         {
             Console.WriteLine();
-
+            //Ciclo para impresion
             foreach (var item in arreglo)
                 Console.Write($"{item} ");
 
@@ -292,6 +312,7 @@ namespace Ordenamiento_BubleShell
 
         public static void ImprimirEnL<T>(this T[] arreglo) where T : IComparable<T>
         {
+            //Ciclo para impresion en linea
             foreach (var item in arreglo)
                 Console.Write($"{item} ");
         }
